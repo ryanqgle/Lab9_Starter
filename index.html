@@ -151,6 +151,11 @@
         console.trace('console trace message');
       });
       errorBtns[14].addEventListener('click', () => {
+        try {
+          nonExistentFunction();
+        } catch (error) {
+          console.error('global error:', error);
+        }
         throw new Error('console global error message');
       });
 
